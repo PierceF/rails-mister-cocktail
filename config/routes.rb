@@ -5,5 +5,5 @@ Rails.application.routes.draw do
     resources :doses
 
   end
-  resources :doses, only: :create
+  # resources :doses, only: :create
 end

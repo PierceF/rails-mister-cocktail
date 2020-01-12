@@ -1,5 +1,6 @@
 class DosesController < ApplicationController
   before_action :set_cocktail
+
   def index
     @doses = Dose.all
   end
@@ -33,18 +34,19 @@ class DosesController < ApplicationController
   def destroy
     @dose = Dose.find(params[:id])
     @dose.destroy
-
-    redirect_to doses_path
+    redirect_to cocktail_path(@cocktail)
   end
+
   private
 
   def dose_params
     params.require(:dose).permit(:description) # what else should I put in here?
   end
 
-    def set_cocktail
+  def set_cocktail
     @cocktail = Cocktail.find(params[:cocktail_id])
   end
+
   def set_ingredient
     @ingredient = Ingredient.find(params[:ingredient_id])
   end
