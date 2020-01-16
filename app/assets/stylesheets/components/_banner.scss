@@ -1,7 +1,11 @@
 .banner {
-  background-size: cover;
+  background-repeat: no-repeat;
+  background-size: contain;
+  // object-fit: cover;
+  background-color:rgb(33, 37, 41);
   background-position: center;
   padding: 150px 0;
+  height: 100vh;
 }
 
 .banner h1 {
