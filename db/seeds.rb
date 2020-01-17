@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 #
@@ -18,8 +20,7 @@ ingredients = JSON.parse(ingredients_file)
 
 Ingredient.destroy_all
 
-ingredients["drinks"].each do |ingredient|
- # p ingredient["strIngredient1"]
- Ingredient.create(name: ingredient["strIngredient1"])
+ingredients['drinks'].each do |ingredient|
+  # p ingredient["strIngredient1"]
+  Ingredient.create(name: ingredient['strIngredient1'])
 end
-

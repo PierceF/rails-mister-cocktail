@@ -13,6 +13,11 @@
 
   <body>
     <%= render "shared/navbar" %>
+    <% flash.each do |name, msg| %>
+      <div class='alert alert-<%= name %>' role="alert">
+        <%= msg %>
+      </div>
+    <% end %>
     <%= yield %>
     <%= javascript_include_tag "application" %> <!-- from app/assets/javascripts/application.js -->
     <%= javascript_pack_tag "application" %>    <!-- from app/javascript/packs/application.js -->

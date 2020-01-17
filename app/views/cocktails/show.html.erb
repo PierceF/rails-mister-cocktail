@@ -1,7 +1,9 @@
-<h1>Cocktails#show</h1>
-<p>Find me in app/views/cocktails/show.html.erb</p>
-
-<h1><%= "Here is how you make " + @cocktail.name %></h1>
+<!-- I want to add a conditional for cocktail photo. If cocktail photo exits then uses the cocktail photo from cl. else use this random photo -->
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url( <% if @cocktail.photo.attached? %> <%= cl_image_path @cocktail.photo.key %> <% else %> https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/lunch.jpg <% end %>)">
+  <div class="container">
+    <h1><%= "Here is how you make " + @cocktail.name %></h1>
+  </div>
+</div>
 
 <br>
 <%= link_to "Add a new dose", new_cocktail_dose_path(@cocktail)  %>
@@ -11,4 +13,5 @@
     <li><%= dose.description %> of <%= dose.ingredient.name %></li>
     <%= link_to "Delete", cocktail_dose_path(@cocktail, dose), method: :delete %>
   <% end %>
+<%= link_to "Go Back", root_path %>
 

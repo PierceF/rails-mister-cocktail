@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CocktailsController < ApplicationController
   def index
     @cocktails = Cocktail.all
@@ -14,8 +16,14 @@ class CocktailsController < ApplicationController
 
   def create
     @cocktail = Cocktail.new(cocktail_params)
-    @cocktail.save
-    redirect_to cocktail_path(@cocktail)
+    if @cocktail.photo.attached?
+      @cocktail.save
+      redirect_to cocktail_path(@cocktail)
+    else
+      redirect_to new_cocktail_path,
+                  warning: "Sorry, you can't create a cocktail without
+                  uploading an image"
+    end
   end
 
   def edit
@@ -34,9 +42,10 @@ class CocktailsController < ApplicationController
 
     # redirect_to cocktails_path
   end
+
   private
 
   def cocktail_params
-    params.require(:cocktail).permit(:name)
+    params.require(:cocktail).permit(:name, :photo)
   end
 end
