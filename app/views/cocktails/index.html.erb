@@ -10,15 +10,18 @@
 <section>
   <div class="cards">
     <% @cocktails.each do |cocktail| %>
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url( <% if cocktail.photo.attached? %> <%= cl_image_path cocktail.photo.key %> <% else %> https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/lunch.jpg <% end %>)">
-      <%= link_to cocktail.name, cocktail_path(cocktail) %>
-    </div>
+
+      <%= link_to cocktail_path(cocktail) do %>
+        <div class="card-category hover13 column" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url( <% if cocktail.photo.attached? %> <%= cl_image_path cocktail.photo.key %> <% else %> https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/lunch.jpg <% end %>)">
+            <%= cocktail.name %>
+        </div>
+      <% end %>
      <% end %>
   </div>
 </section>
-
-
-
+<!-- <section class="p2">
+      <a href="#" data-cont="supbro">sup bro</a>
+</section> -->
 
 
 

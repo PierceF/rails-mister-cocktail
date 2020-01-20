@@ -22,9 +22,6 @@ Cocktail.destroy_all
 
 puts 'Creating cocktails...'
 
-file = URI.open('https://giantbomb1.cbsistatic.com/uploads/original/9/99864/2419866-nes_console_set.png')
-cocktail = Cocktail.new(name: 'NES')
-cocktail.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 # cocktials_attributes = [
 #   { name: 'White Russian' },
 #   { name: 'BELLINI'},
@@ -42,7 +39,37 @@ cocktail.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 #   }
 # ]
 # Cocktail.create!(cocktials_attributes)
+
+file = URI.open('https://static.vinepair.com/wp-content/uploads/2017/11/white-russian-inside.jpg')
+cocktail = Cocktail.new(name: 'White Russian')
+cocktail.photo.attach(io: file, filename: 'whiterussian.jpg', content_type: 'image/jpg')
 cocktail.save!
+
+file2 = URI.open('https://cdn.liquor.com/wp-content/uploads/2012/06/12153016/Bellini-newest.jpg')
+cocktail2 = Cocktail.new(name: 'Bellini')
+cocktail2.photo.attach(io: file2, filename: 'Bellini.jpg', content_type: 'image/jpg')
+cocktail2.save!
+
+file3 = URI.open('https://res.cloudinary.com/hksqkdlah/image/upload/v1568666100/SFS_champagne_cocktail_150_d2wzhn.jpg')
+cocktail3 = Cocktail.new(name: 'Champagne Cocktail')
+cocktail3.photo.attach(io: file3, filename: 'Champagnecocktail.jpg', content_type: 'image/jpg')
+cocktail3.save!
+
+file4 = URI.open('https://hips.hearstapps.com/delish/assets/18/08/1519246829-delish-irish-coffee.jpg')
+cocktail4 = Cocktail.new(name: 'Irish Coffee')
+cocktail4.photo.attach(io: file4, filename: 'Irishcoffee.jpg', content_type: 'image/jpg')
+cocktail4.save!
+
+file5 = URI.open('https://s3.us-east-2.amazonaws.com/chrissy-tuxedo-no2/1500x861bamboo-8.jpg')
+cocktail5 = Cocktail.new(name: 'Bamboo')
+cocktail5.photo.attach(io: file5, filename: 'Bamboo.jpg', content_type: 'image.jpg')
+cocktail5.save!
+
+file6 = URI.open('https://besthqwallpapers.com/Temp/20-1-2020/long-island-iced-tea-cocktail-darkness-cocktails-macro-glass-with-drink-besthqwallpapers.com-2048x1536.jpg')
+cocktail6 = Cocktail.new(name: 'Long Island Ice Tea')
+cocktail6.photo.attach(io: file6, filename: 'LongIslandIceTea.jpg', content_type: 'image.jpg')
+cocktail6.save!
+
 Ingredient.destroy_all
 
 ingredients['drinks'].each do |ingredient|

@@ -14,8 +14,43 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
-.card-category, a {
-  color: white;
+// .card-category a {
+//   color: white;
+// }
+
+.card-category:hover {
+  opacity: 1;
+  -webkit-animation: flash 1.5s;
+  animation: flash 1.5s;
+  text-decoration: none !important;
+}
+
+// a:hover {
+//   text-decoration: none;
+// }
+.card-category a:hover { //Why does this not work!!!
+  text-decoration: none;
+}
+//Why does this not work!!!
+.card-category:hover { //Why does this not work!!!
+  text-decoration: none;
+}
+
+@-webkit-keyframes flash {
+  0% {
+    opacity: .4;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes flash {
+  0% {
+    opacity: .4;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .cards {
@@ -23,6 +58,10 @@
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 16px 24px;
 }
+
+// #name:hover {
+//   text-decoration: overline;
+// }
 
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
@@ -60,3 +99,116 @@
     padding: 0px 20vh;
   }
 }
+
+/* Flashing */
+.hover13 figure:hover img {
+  opacity: 1;
+  -webkit-animation: flash 1.5s;
+  animation: flash 1.5s;
+}
+@-webkit-keyframes flash {
+  0% {
+    opacity: .4;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes flash {
+  0% {
+    opacity: .4;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+// *,
+// *:before,
+// *:after {
+//   -webkit-box-sizing: border-box;
+//   -moz-box-sizing: border-box;
+//   box-sizing: border-box;
+// }
+// section {
+//   font-family: 'Open Sans', sans-serif;
+//   height: 350px;
+//   position: relative;
+//   background-clip: fixed;
+//   background-repeat: no-repeat;
+//   background-size: cover;
+//   background-position: center center;
+//   overflow: hidden;
+//   width: 94%;
+//   margin: 0 auto 30px;
+// }
+// section a {
+//   text-transform: uppercase;
+//   font-weight: 800;
+//   text-align: center;
+//   text-decoration: none;
+//   color: #fff;
+//   display: block;
+//   font-size: 4.875em;
+// }
+// section.p2 {
+//   background-image: url(//caraujo_pens.surge.sh/images/vA5Po3T.jpg);
+// }
+// section.p2 a {
+//   width: 216px;
+//   height: 94px;
+//   line-height: 94px;
+//   position: absolute;
+//   top: 50%;
+//   left: 50%;
+//   margin-left: -108px;
+//   margin-top: -47px;
+//   -webkit-transition: all 0.5s ease-out;
+//   -moz-transition: all 0.5s ease-out;
+//   -ms-transition: all 0.5s ease-out;
+//   -o-transition: all 0.5s ease-out;
+//   transition: all 0.5s ease-out;
+//   color: transparent;
+// }
+// section.p2 a:after,
+// section.p2 a:before {
+//   -webkit-transition: inherit;
+//   -moz-transition: inherit;
+//   -ms-transition: inherit;
+//   -o-transition: inherit;
+//   transition: inherit;
+//   position: absolute;
+//   left: 0;
+//   right: 0;
+//   top: 0;
+//   bottom: 0;
+//   content: attr(data-cont);
+//   color: #fff;
+// }
+// section.p2 a:before {
+//   -webkit-clip-path: polygon(0 0, 0 100%, 12.5% 100%, 12.5% 0, 25% 0, 25% 100%, 37.5% 100%, 37.5% 0, 50% 0, 50% 100%, 62.5% 100%, 62.5% 0, 75% 0, 75% 100%, 87.5% 100%, 87.5% 0);
+//   clip-path: polygon(0 0, 0 100%, 12.5% 100%, 12.5% 0, 25% 0, 25% 100%, 37.5% 100%, 37.5% 0, 50% 0, 50% 100%, 62.5% 100%, 62.5% 0, 75% 0, 75% 100%, 87.5% 100%, 87.5% 0);
+// }
+// section.p2 a:after {
+//   -webkit-clip-path: polygon(12.5% 0, 12.5% 100%, 25% 100%, 25% 0, 37.5% 0, 37.5% 100%, 50% 100%, 50% 0, 62.5% 0, 62.5% 100%, 75% 100%, 75% 0, 87.5% 0, 87.5% 100%, 100% 100%, 100% 0);
+//   clip-path: polygon(12.5% 0, 12.5% 100%, 25% 100%, 25% 0, 37.5% 0, 37.5% 100%, 50% 100%, 50% 0, 62.5% 0, 62.5% 100%, 75% 100%, 75% 0, 87.5% 0, 87.5% 100%, 100% 100%, 100% 0);
+// }
+// section.p2 a:hover {
+//   color: #fff;
+// }
+// section.p2 a:hover:before {
+//   -webkit-transform: translate(0, -100%);
+//   -moz-transform: translate(0, -100%);
+//   -ms-transform: translate(0, -100%);
+//   -o-transform: translate(0, -100%);
+//   transform: translate(0, -100%);
+//   color: transparent;
+// }
+// section.p2 a:hover:after {
+//   -webkit-transform: translate(0, 100%);
+//   -moz-transform: translate(0, 100%);
+//   -ms-transform: translate(0, 100%);
+//   -o-transform: translate(0, 100%);
+//   transform: translate(0, 100%);
+//   color: transparent;
+// }
