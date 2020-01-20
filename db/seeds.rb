@@ -42,7 +42,7 @@ cocktail.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 #   }
 # ]
 # Cocktail.create!(cocktials_attributes)
-Cocktail.create(cocktail)
+cocktail.save!
 Ingredient.destroy_all
 
 ingredients['drinks'].each do |ingredient|
