@@ -1,14 +1,37 @@
+<!-- <div class="navbar-wagon aos-init aos-animate" data-aos="zoom-out-down"> -->
+  <!-- Logo -->
+<!-- <div class="navbar-logo"><h2>
+  <a class="navbar-wagon-brand" href="/cocktails">
+    🍸 Mr. Cocktail
+</a></h2></div> -->
+
+  <!-- Right Navigation -->
+  <!-- <div class="navbar-wagon-right">
+
+    <a class="btn btn-default" href="/cocktails/new">New cocktail</a>
+
+  </div>
+</div> -->
+
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon fixed-top">
-  <%= link_to "#", class: "navbar-brand" do %>
-    <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
+  <%= link_to root_path, class: "navbar-brand" do %>
+    <%= image_tag "orange.png", id: 'loading' %>
   <% end %>
 
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  <div class="navbar-wagon-right">
+
+    <%= link_to 'New Cocktail', new_cocktail_path, {:class=>"btn btn-ghost2"} %>
+
+  </div>
+
+
+
+  <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
-  </button>
+  </button> -->
 
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+  <!-- <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
         <%= link_to "Home", "#", class: "nav-link" %>
@@ -24,5 +47,6 @@
         </div>
       </li>
     </ul>
-  </div>
+  </div> -->
 </div>
+

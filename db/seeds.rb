@@ -78,5 +78,30 @@ ingredients['drinks'].each do |ingredient|
 end
 
 # dose_attributes =
+puts 'Creating doses...'
 
-puts 'Finished!'
+Dose.create!(description: "Just a pinch of", ingredient: (Ingredient.find_by name: "Gin"), cocktail: cocktail)
+Dose.create!(description: "A hand full of", ingredient: (Ingredient.find_by name: "Lime juice"), cocktail: cocktail)
+Dose.create!(description: "A lot of!", ingredient: (Ingredient.find_by name: "Port"), cocktail: cocktail)
+
+Dose.create!(description: "Just a pinch of", ingredient: (Ingredient.find_by name: "Gin"), cocktail: cocktail2)
+Dose.create!(description: "A hand full of", ingredient: (Ingredient.find_by name: "Lime juice"), cocktail: cocktail2)
+Dose.create!(description: "A lot of!", ingredient: (Ingredient.find_by name: "Port"), cocktail: cocktail2)
+
+Dose.create!(description: "Just a pinch of", ingredient: (Ingredient.find_by name: "Gin"), cocktail: cocktail3)
+Dose.create!(description: "A hand full of", ingredient: (Ingredient.find_by name: "Lime juice"), cocktail: cocktail3)
+Dose.create!(description: "A lot of!", ingredient: (Ingredient.find_by name: "Port"), cocktail: cocktail3)
+
+Dose.create!(description: "Just a pinch of", ingredient: (Ingredient.find_by name: "Gin"), cocktail: cocktail4)
+Dose.create!(description: "A hand full of", ingredient: (Ingredient.find_by name: "Lime juice"), cocktail: cocktail4)
+Dose.create!(description: "A lot of!", ingredient: (Ingredient.find_by name: "Port"), cocktail: cocktail4)
+
+Dose.create!(description: "Just a pinch of", ingredient: (Ingredient.find_by name: "Gin"), cocktail: cocktail5)
+Dose.create!(description: "A hand full of", ingredient: (Ingredient.find_by name: "Lime juice"), cocktail: cocktail5)
+Dose.create!(description: "A lot of!", ingredient: (Ingredient.find_by name: "Port"), cocktail: cocktail5)
+
+Dose.create!(description: "Just a pinch of", ingredient: (Ingredient.find_by name: "Gin"), cocktail: cocktail6)
+Dose.create!(description: "A hand full of", ingredient: (Ingredient.find_by name: "Lime juice"), cocktail: cocktail6)
+Dose.create!(description: "A lot of!", ingredient: (Ingredient.find_by name: "Port"), cocktail: cocktail6)
+
+puts 'All done Pierce! You da best bro!'

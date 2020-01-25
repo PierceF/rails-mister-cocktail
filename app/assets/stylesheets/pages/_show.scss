@@ -1,0 +1,16 @@
+// .container {
+//   padding-top: 40vh;
+// }
+.center {
+  text-align: center;
+  padding: 25px;
+  margin-top: 3px
+}
+
+.card:hover {
+  opacity: 1;
+  -webkit-animation: flash 1.5s;
+  animation: flash 1.5s;
+  text-decoration: none !important;
+}
+

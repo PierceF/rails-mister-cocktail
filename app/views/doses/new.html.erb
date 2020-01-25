@@ -1,7 +1,13 @@
-<%= simple_form_for [@cocktail, @dose] do |f| %>
-  <%= f.input :description %>
-  <%= f.association :ingredient, as: :select,
-    collection: Ingredient.all %>
+<div class="form-container">
+  <%= simple_form_for [@cocktail, @dose] do |f| %>
+    <%= f.input :description %>
+    <%= f.association :ingredient, as: :select,
+      collection: Ingredient.all %>
 
-  <%= f.submit "add a dose and ingredient", class: "btn btn-primary" %>
-<% end %>
+    <%= f.submit "Add An Ingredient Dosage", class: "btn btn-dark" %>
+  <% end %>
+</div>
+
+<div class="center", style="margin-top: 60px">
+  <%= link_to "Back", root_path, class: "btn btn-ghost" %>
+</div>

@@ -2,28 +2,30 @@
   <div class="container">
     <h1>The Art of Cocktail</h1>
     <p>Elegance in every sip</p>
-    <a class="btn btn-primary" href="#">Make Your Drink</a>
+    <%= link_to 'Make Your Drink', new_cocktail_path, {:class=>"btn btn-outline-light"} %>
   </div>
 </div>
-<h2>A place to discover and create the finest recipies of cocktails and mocktails.</h2>
-<!-- <p>Find me in app/views/cocktails/index.html.erb</p> -->
-<section>
-  <div class="cards">
-    <% @cocktails.each do |cocktail| %>
+<div class="background">
+  <h2>A place to discover and create the finest recipies of cocktails and mocktails.</h2>
+  <!-- <p>Find me in app/views/cocktails/index.html.erb</p> -->
+  <section>
+    <div class="cards">
+      <% @cocktails.each do |cocktail| %>
 
-      <%= link_to cocktail_path(cocktail) do %>
-        <div data-aos="fade-up" class="card-category hover13 column" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url( <% if cocktail.photo.attached? %> <%= cl_image_path cocktail.photo.key %> <% else %> https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/lunch.jpg <% end %>)">
-            <%= cocktail.name %>
-        </div>
-      <% end %>
-     <% end %>
-  </div>
-</section>
+        <%= link_to cocktail_path(cocktail) do %>
+          <div data-aos="fade-up" class="card-category hover13 column" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url( <% if cocktail.photo.attached? %> <%= cl_image_path cocktail.photo.key %> <% else %> https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/lunch.jpg <% end %>)">
+              <%= cocktail.name %>
+          </div>
+        <% end %>
+       <% end %>
+    </div>
+  </section>
+</div>
 <!-- <section class="p2">
       <a href="#" data-cont="supbro">sup bro</a>
 </section> -->
 
 
 
-<%= link_to 'New Cocktail', new_cocktail_path, {:class=>"btn btn-primary"} %>
+
 

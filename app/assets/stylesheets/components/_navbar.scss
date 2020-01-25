@@ -1,6 +1,7 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: transparent;
+  transition: 0.5s background-color ease;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -9,4 +10,20 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+}
+
+.navbar-lewagon-white {
+  background: white;
+}
+#loading:hover {
+    -webkit-animation: rotation 2s infinite linear;
+}
+
+@-webkit-keyframes rotation {
+    from {
+        -webkit-transform: rotate(0deg);
+    }
+    to {
+        -webkit-transform: rotate(359deg);
+    }
 }

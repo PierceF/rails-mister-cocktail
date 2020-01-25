@@ -1,17 +1,32 @@
 <!-- I want to add a conditional for cocktail photo. If cocktail photo exits then uses the cocktail photo from cl. else use this random photo -->
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url( <% if @cocktail.photo.attached? %> <%= cl_image_path @cocktail.photo.key %> <% else %> https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/lunch.jpg <% end %>)">
   <div class="container">
-    <h1><%= "Here is how you make " + @cocktail.name %></h1>
+    <h1><%= @cocktail.name %></h1>
   </div>
 </div>
 
 <br>
-<%= link_to "Add a new dose", new_cocktail_dose_path(@cocktail)  %>
+<div class="center">
+  <%= link_to "Add A New Dose", new_cocktail_dose_path(@cocktail), class: "btn btn-ghost" %>
+</div>
 
-  <% @cocktail.doses.each do |dose| %>
+<div class="cards">
+<% @cocktail.doses.each do |dose| %>
+  <div class="card" >
+    <div class="card-body">
+      <h5 class="card-title"><%= dose.ingredient.name %></h5>
+      <p class="card-text"><%= dose.description %></p>
+      <%= link_to "Delete", cocktail_dose_path(@cocktail, dose), class: "btn btn-dark", method: :delete %>
+    </div>
+  </div>
+<% end %>
+</div>
 
-    <li><%= dose.description %> of <%= dose.ingredient.name %></li>
-    <%= link_to "Delete", cocktail_dose_path(@cocktail, dose), method: :delete %>
-  <% end %>
-<%= link_to "Go Back", root_path %>
+
+<br>
+<div class="center">
+  <%= link_to "Back", root_path, class: "btn btn-ghost" %>
+</div>
+
+
 
