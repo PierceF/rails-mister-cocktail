@@ -1,4 +1,17 @@
 <!-- I want to add a conditional for cocktail photo. If cocktail photo exits then uses the cocktail photo from cl. else use this random photo -->
+
+
+<% if params[:first_time] == 'true' %>
+  <div id="achievement" class="">
+    <div class="circle"></div>
+    <div class="copy">
+      <h5>Achievement Unlocked!</h5>
+      <h6>New Cocktail Created!</h6>
+    </div>
+  </div>
+<% end %>
+
+
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url( <% if @cocktail.photo.attached? %> <%= cl_image_path @cocktail.photo.key %> <% else %> https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/lunch.jpg <% end %>)">
   <div class="container">
     <h1><%= @cocktail.name %></h1>
@@ -27,6 +40,9 @@
 <div class="center">
   <%= link_to "Back", root_path, class: "btn btn-ghost" %>
 </div>
+
+
+<!-- <div class="refresh">again?</div> -->
 
 
 
